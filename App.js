@@ -24,6 +24,7 @@ import editSite from "./screens/pages/SiteManagement/editSite";
 import DeliveryManagement from "./screens/pages/DeliveryManagement/DeliveryManagement";
 import Delivery from "./screens/pages/DeliveryManagement/Delivery";
 import editDelivery from "./screens/pages/DeliveryManagement/editDelivery";
+import bottomTabBarScreen from "./components/bottomTabBarScreen";
 
 LogBox.ignoreLogs([
   "ViewPropTypes will be removed",
@@ -36,6 +37,12 @@ const switchNavigator = createSwitchNavigator(
     Loading: LoadingScreen,
     Splash: splashScreen,
     mainFlow: createStackNavigator({
+      BottomTabBar: {
+        screen: bottomTabBarScreen,
+        navigationOptions: {
+          headerShown: false,
+        },
+      },
       // Signin: signinScreen,
       // Signup: signupScreen,
       Home: HomeScreen,

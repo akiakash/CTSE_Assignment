@@ -247,14 +247,17 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <TouchableOpacity onPress={() => navigation.push("EmployeeForm")}>
-          <Card title="Local Modules">
+          <Card title="Local Modules" style={styles.container1}>
             {/*react-native-elements Card*/}
 
             <Text style={styles.paragraph}>Employee Management</Text>
           </Card>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.push("StocksForm")}>
-          <Card title="Local Modules">
+        <TouchableOpacity
+          onPress={() => navigation.push("StocksForm")}
+          style={styles.container1}
+        >
+          <Card title="Local Modules" style={styles.container1}>
             {/*react-native-elements Card*/}
 
             <Text style={styles.paragraph}>Stock Management</Text>
@@ -293,6 +296,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingTop: 40,
     backgroundColor: "#ecf0f1",
+  },
+  container1: {
+    width: 250,
+    backgroundColor: "#ecf0f1",
+    borderRadius: 100,
   },
   paragraph: {
     margin: 24,
