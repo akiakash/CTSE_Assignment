@@ -23,6 +23,8 @@ import {
 import { db } from "../../config/firebase";
 import { ScrollView } from "react-native-gesture-handler";
 import { Button } from "react-native-paper";
+import { useToast } from "react-native-toast-notifications";
+import { ToastProvider } from "react-native-toast-notifications";
 
 const header = () => {
   return (
@@ -39,6 +41,7 @@ const header = () => {
 };
 
 const Employees = ({ navigation }) => {
+  const toast = useToast();
   const [state, setState] = useState({
     employeeInput: "",
     employeeList: null,
@@ -73,6 +76,7 @@ const Employees = ({ navigation }) => {
             const userDoc = doc(db, "Employees", id);
             await deleteDoc(userDoc);
             getDataFun();
+            toast.show("Hello World");
           },
         },
       ],
@@ -82,6 +86,7 @@ const Employees = ({ navigation }) => {
 
   return (
     <View>
+      <ToastProvider />
       {header()}
       {/* <Text>profileDetailScreen</Text> */}
 
@@ -116,6 +121,9 @@ const Employees = ({ navigation }) => {
                   {"\n"}
                   {"\n"}
                   Name : {item.name}
+                  {"\n"}
+                  {"\n"}
+                  Designation : {item.designation}
                 </Text>
               </View>
               <View style={{ flexDirection: "row" }}>

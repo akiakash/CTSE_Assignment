@@ -64,6 +64,11 @@ const DeliveryManagement = ({ navigation }) => {
     { key: "4", value: "Door delivery" },
   ];
 
+  const checkFun = (item) => {
+    // console.log(item);
+    setType(item);
+  };
+
   return (
     <Card style={styles.container}>
       <View style={{ margin: 10 }}>
@@ -114,21 +119,13 @@ const DeliveryManagement = ({ navigation }) => {
               }
             }}
           /> */}
-
           <SelectList
             setSelected={(val) => setSelected(val)}
             data={data}
             save="value"
-            onSelect={() => alert(selected)}
+            onSelect={() => checkFun(selected)}
             label="Categories"
-            onChangeText={({ data }) => {
-              const trimmedText = data.trim();
-              if (!trimmedText) {
-                setType(null);
-              } else {
-                setType(selected);
-              }
-            }}
+            // onChangeText={() => setEmpDesignation(selected)}
           />
 
           <Text>Delivery Price </Text>

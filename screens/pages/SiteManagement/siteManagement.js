@@ -64,6 +64,11 @@ const SiteManagement = ({ navigation }) => {
     { key: "4", value: "Place C" },
   ];
 
+  const checkFun = (item) => {
+    // console.log(item);
+    setPlace(item);
+  };
+
   return (
     <Card style={styles.container}>
       <View style={{ margin: 10 }}>
@@ -71,7 +76,7 @@ const SiteManagement = ({ navigation }) => {
         {/* <Text>profileDetailScreen</Text> */}
 
         <SafeAreaView>
-          <Text>Site ID</Text>
+          {/* <Text>Site ID</Text>
           <TextInput
             style={styles.input}
             value={sId}
@@ -83,7 +88,7 @@ const SiteManagement = ({ navigation }) => {
                 setId(trimmedText);
               }
             }}
-          />
+          /> */}
           <Text>Site Name</Text>
           <TextInput
             style={styles.input}
@@ -119,19 +124,11 @@ const SiteManagement = ({ navigation }) => {
             setSelected={(val) => setSelected(val)}
             data={data}
             save="value"
-            onSelect={() => alert(selected)}
+            onSelect={() => checkFun(selected)}
             label="Categories"
-            onChangeText={({ data }) => {
-              const trimmedText = data.trim();
-              if (!trimmedText) {
-                setPlace(null);
-              } else {
-                setPlace(selected);
-              }
-            }}
+            // onChangeText={() => setEmpDesignation(selected)}
           />
-
-          <Text>Site Image </Text>
+          <Text>Site Description </Text>
           <TextInput
             style={styles.input}
             placeholder="useless placeholder"

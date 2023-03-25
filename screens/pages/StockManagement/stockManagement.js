@@ -68,6 +68,12 @@ const StockManagement = ({ navigation }) => {
     { key: "4", value: "Marbel" },
     { key: "5", value: "Others" },
   ];
+
+  const checkFun = (item) => {
+    // console.log(item);
+    setType(item);
+  };
+
   return (
     <Card style={styles.container}>
       <View style={{ margin: 10 }}>
@@ -75,8 +81,8 @@ const StockManagement = ({ navigation }) => {
         {/* <Text>profileDetailScreen</Text> */}
 
         <SafeAreaView>
-          <Text>Stock ID</Text>
-          <TextInput
+          {/* <Text>Stock ID</Text> */}
+          {/* <TextInput
             style={styles.input}
             value={sId}
             onChangeText={(text) => {
@@ -87,7 +93,7 @@ const StockManagement = ({ navigation }) => {
                 setId(trimmedText);
               }
             }}
-          />
+          /> */}
           <Text>Stock Name</Text>
           <TextInput
             style={styles.input}
@@ -138,16 +144,9 @@ const StockManagement = ({ navigation }) => {
             setSelected={(val) => setSelected(val)}
             data={data}
             save="value"
-            onSelect={() => alert(selected)}
+            onSelect={() => checkFun(selected)}
             label="Categories"
-            onChangeText={({ data }) => {
-              const trimmedText = data.trim();
-              if (!trimmedText) {
-                setEmpDesignation(null);
-              } else {
-                setEmpDesignation(selected);
-              }
-            }}
+            // onChangeText={() => setEmpDesignation(selected)}
           />
           <Text>Maximum Quantity</Text>
           <TextInput

@@ -19,7 +19,7 @@ class SplashScreen extends Component {
       <SafeAreaView style={{ flex: 1, backgroundColor: Colors.bodyBackColor }}>
         <StatusBar translucent={true} backgroundColor="transparent" />
         <ImageBackground
-          source={require("../assets/images/bg1.jpg")}
+          source={require("../assets/bg.jpg")}
           style={{ flex: 1 }}
         >
           <View
@@ -27,14 +27,13 @@ class SplashScreen extends Component {
               flex: 1,
               justifyContent: "center",
               alignItems: "center",
-              backgroundColor: "rgba(0,0,0,0.7)",
             }}
           >
-            <Image
+            {/* <Image
               source={require("../assets/images/newlogo.png")}
               style={{ width: 120.0, height: 100.0 }}
               resizeMode="contain"
-            />
+            /> */}
           </View>
         </ImageBackground>
       </SafeAreaView>

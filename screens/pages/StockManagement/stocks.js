@@ -121,6 +121,9 @@ const Stocks = ({ navigation }) => {
                   {"\n"}
                   {"\n"}
                   Name : {item.name}
+                  {"\n"}
+                  {"\n"}
+                  Type : {item.type}
                 </Text>
               </View>
               <View style={{ flexDirection: "row" }}>

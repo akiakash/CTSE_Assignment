@@ -121,6 +121,9 @@ const Sites = ({ navigation }) => {
                   {"\n"}
                   {"\n"}
                   Name: {item.name}
+                  {"\n"}
+                  {"\n"}
+                  Name: {item.place}
                 </Text>
               </View>
               <View style={{ flexDirection: "row" }}>

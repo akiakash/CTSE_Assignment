@@ -37,6 +37,15 @@ const ProfileDetailScreen = ({ navigation }) => {
   const [empDob, setEmpDob] = useState("");
 
   const createEmp = async () => {
+    // const data = {
+    //   id: empid,
+    //   name: empName,
+    //   age: empAge,
+    //   designation: empDesignation,
+    //   type: empType,
+    //   dob: empDob,
+    // };
+    // console.log(data);
     try {
       await addDoc(collection(db, "Employees"), {
         id: empid,
@@ -67,6 +76,12 @@ const ProfileDetailScreen = ({ navigation }) => {
     { key: "3", value: "Manager" },
     { key: "3", value: "Security" },
   ];
+
+  const checkFun = (item) => {
+    // console.log(item);
+    setEmpDesignation(item);
+  };
+
   return (
     <Card style={styles.container}>
       <View style={{ margin: 10 }}>
@@ -74,7 +89,7 @@ const ProfileDetailScreen = ({ navigation }) => {
         {/* <Text>profileDetailScreen</Text> */}
 
         <SafeAreaView>
-          <Text>Employee ID</Text>
+          {/* <Text>Employee ID</Text>
           <TextInput
             style={styles.input}
             value={empid}
@@ -86,7 +101,7 @@ const ProfileDetailScreen = ({ navigation }) => {
                 setEmpId(trimmedText);
               }
             }}
-          />
+          /> */}
           <Text>Employee Name</Text>
           <TextInput
             style={styles.input}
@@ -137,16 +152,9 @@ const ProfileDetailScreen = ({ navigation }) => {
             setSelected={(val) => setSelected(val)}
             data={data}
             save="value"
-            onSelect={() => alert(selected)}
+            onSelect={() => checkFun(selected)}
             label="Categories"
-            onChangeText={() => {
-              const trimmedText = text.trim();
-              if (!trimmedText) {
-                setEmpDesignation(null);
-              } else {
-                setEmpDesignation(selected);
-              }
-            }}
+            // onChangeText={() => setEmpDesignation(selected)}
           />
           <Text>Employee Type</Text>
           <TextInput

@@ -110,10 +110,10 @@ const Delivery = ({ navigation }) => {
             >
               <View>
                 <Text style={{ fontSize: 19, padding: 10, paddingLeft: 15 }}>
-                  ID : {item.id}
+                  Delivery Person :{item.name}
                   {"\n"}
                   {"\n"}
-                  Name :{item.name}
+                  Type : {item.type}
                 </Text>
               </View>
               <View style={{ flexDirection: "row" }}>
