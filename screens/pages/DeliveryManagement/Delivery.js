@@ -3,12 +3,11 @@ import React, { useState, useEffect } from "react";
 import { withNavigation } from "react-navigation";
 import { Colors, Fonts, Sizes } from "../../../constants/styles";
 import { Alert } from "react-native";
-
+import { Button } from "react-native-paper";
 import {
   SafeAreaView,
   StyleSheet,
   TextInput,
-  Button,
   TouchableOpacity,
 } from "react-native";
 import FeatherIcon from "react-native-vector-icons/Feather";
@@ -25,13 +24,15 @@ import { ScrollView } from "react-native-gesture-handler";
 
 const header = () => {
   return (
-    <Text
-      style={{
-        marginHorizontal: Sizes.fixPadding * 20.0,
-        marginVertical: Sizes.fixPadding + 20.0,
-        ...Fonts.blackColor20Bold,
-      }}
-    ></Text>
+    <View style={{ backgroundColor: "#6c09ed" }}>
+      <Text
+        style={{
+          marginHorizontal: Sizes.fixPadding * 20.0,
+          marginVertical: Sizes.fixPadding + 20.0,
+          ...Fonts.blackColor20Bold,
+        }}
+      ></Text>
+    </View>
   );
 };
 
@@ -82,13 +83,16 @@ const Delivery = ({ navigation }) => {
       {header()}
       {/* <Text>profileDetailScreen</Text> */}
 
-      <Button
-        title="Add Delivery"
-        color="black"
-        onPress={() => navigation.push("AddDelivery")}
-        accessibilityLabel="Learn more about this purple button"
-      />
-      <Text style={{ margin: 10, fontSize: 20 }}>Delivery List</Text>
+      <Text
+        style={{
+          margin: 10,
+          fontSize: 30,
+          color: "#6c09ed",
+          marginLeft: 120,
+        }}
+      >
+        Delivery List
+      </Text>
       <ScrollView>
         <SafeAreaView>
           {state.DeliveryList?.map((item, index) => (
@@ -131,6 +135,21 @@ const Delivery = ({ navigation }) => {
               </View>
             </View>
           ))}
+          <Button
+            style={{
+              backgroundColor: "#6c09ed",
+              fontColor: "white",
+              width: 200,
+              borderRadius: 10,
+              marginLeft: 120,
+              marginTop: 20,
+            }}
+            mode="contained"
+            title="ADD Delivery"
+            onPress={() => navigation.push("AddDelivery")}
+          >
+            ADD Employee
+          </Button>
         </SafeAreaView>
       </ScrollView>
     </View>

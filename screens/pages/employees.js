@@ -8,8 +8,8 @@ import {
   SafeAreaView,
   StyleSheet,
   TextInput,
-  Button,
   TouchableOpacity,
+  Pressable,
 } from "react-native";
 import FeatherIcon from "react-native-vector-icons/Feather";
 import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -22,16 +22,19 @@ import {
 } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { ScrollView } from "react-native-gesture-handler";
+import { Button } from "react-native-paper";
 
 const header = () => {
   return (
-    <Text
-      style={{
-        marginHorizontal: Sizes.fixPadding * 20.0,
-        marginVertical: Sizes.fixPadding + 20.0,
-        ...Fonts.blackColor20Bold,
-      }}
-    ></Text>
+    <View style={{ backgroundColor: "#6c09ed" }}>
+      <Text
+        style={{
+          marginHorizontal: Sizes.fixPadding * 20.0,
+          marginVertical: Sizes.fixPadding + 20.0,
+          ...Fonts.blackColor20Bold,
+        }}
+      ></Text>
+    </View>
   );
 };
 
@@ -82,13 +85,16 @@ const Employees = ({ navigation }) => {
       {header()}
       {/* <Text>profileDetailScreen</Text> */}
 
-      <Button
-        title="Add Employee"
-        color="black"
-        onPress={() => navigation.push("AddEmployee")}
-        accessibilityLabel="Learn more about this purple button"
-      />
-      <Text style={{ margin: 10, fontSize: 20 }}>Employee List</Text>
+      <Text
+        style={{
+          margin: 10,
+          fontSize: 30,
+          color: "#6c09ed",
+          marginLeft: 120,
+        }}
+      >
+        Employee List
+      </Text>
       <ScrollView>
         <SafeAreaView>
           {state.employeeList?.map((item, index) => (
@@ -131,6 +137,21 @@ const Employees = ({ navigation }) => {
               </View>
             </View>
           ))}
+          <Button
+            style={{
+              backgroundColor: "#6c09ed",
+              fontColor: "white",
+              width: 200,
+              borderRadius: 10,
+              marginLeft: 120,
+              marginTop: 20,
+            }}
+            mode="contained"
+            title="ADD Employee"
+            onPress={() => navigation.push("AddEmployee")}
+          >
+            ADD Employee
+          </Button>
         </SafeAreaView>
       </ScrollView>
     </View>
@@ -143,6 +164,18 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
+  },
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: "black",
+  },
+  background: {
+    color: "black",
   },
 });
 Employees.navigationOptions = () => {
