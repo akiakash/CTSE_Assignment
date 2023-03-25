@@ -1,6 +1,6 @@
 # CTSE_Assignment
 
-**Project Name** *Warehouse Management Application*
+**Project Name** *Warehouse Management *
 
 **Member Details**
 | Student ID    | Student Name  |  
