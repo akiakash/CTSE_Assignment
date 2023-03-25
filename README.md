@@ -1,8 +1,8 @@
 # CTSE_Assignment
 
-**Project Name:** *Warehouse Management Application*
+** Project Name ** * Warehouse Management Application *
 
-**Member Details:**
+**Member Details **
 | Student ID    | Student Name  |  
 | ------------- | ------------- | 
 | `IT20132682`  | `Abilash.L`   | 
