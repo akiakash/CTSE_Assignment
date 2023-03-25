@@ -1,8 +1,8 @@
 # CTSE_Assignment
 
-** Project Name ** * Warehouse Management Application *
+**Project Name** *Warehouse Management Application*
 
-**Member Details **
+**Member Details**
 | Student ID    | Student Name  |  
 | ------------- | ------------- | 
 | `IT20132682`  | `Abilash.L`   | 
@@ -10,7 +10,7 @@
 | `IT20072742`  | `Agash.V`     |
 | `IT20250874`  | `T.Abinaya`   |
 
-*** Project Description ***
+***Project Description***
 
 The purpose of this mobile application project is to provide an efficient and streamlined system for managing various aspects of warehouse operations. The application will consist of four sub-systems: Employee management, Stock management, Site/Place management, and Delivery management.
 
