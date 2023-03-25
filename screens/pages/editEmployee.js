@@ -113,7 +113,6 @@ const EditEmployee = ({ navigation }) => {
           <Text>Employee Designation</Text>
           <TextInput
             style={styles.input}
-            placeholder="useless placeholder"
             keyboardType="numeric"
             value={state.empDesignation}
             onChangeText={(text) => {

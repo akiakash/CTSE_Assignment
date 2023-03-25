@@ -8,7 +8,6 @@ import {
   SafeAreaView,
   StyleSheet,
   TextInput,
-  Button,
   TouchableOpacity,
 } from "react-native";
 import FeatherIcon from "react-native-vector-icons/Feather";
@@ -22,16 +21,19 @@ import {
 } from "firebase/firestore";
 import { db } from "../../../config/firebase";
 import { ScrollView } from "react-native-gesture-handler";
+import { Button } from "react-native-paper";
 
 const header = () => {
   return (
-    <Text
-      style={{
-        marginHorizontal: Sizes.fixPadding * 20.0,
-        marginVertical: Sizes.fixPadding + 20.0,
-        ...Fonts.blackColor20Bold,
-      }}
-    ></Text>
+    <View style={{ backgroundColor: "#6c09ed" }}>
+      <Text
+        style={{
+          marginHorizontal: Sizes.fixPadding * 20.0,
+          marginVertical: Sizes.fixPadding + 20.0,
+          ...Fonts.blackColor20Bold,
+        }}
+      ></Text>
+    </View>
   );
 };
 
@@ -88,7 +90,16 @@ const Stocks = ({ navigation }) => {
         onPress={() => navigation.push("AddStock")}
         accessibilityLabel="Learn more about this purple button"
       />
-      <Text style={{ margin: 10, fontSize: 20 }}>Stock List</Text>
+      <Text
+        style={{
+          margin: 10,
+          fontSize: 30,
+          color: "#6c09ed",
+          marginLeft: 150,
+        }}
+      >
+        Stock List
+      </Text>
       <ScrollView>
         <SafeAreaView>
           {state.StockList?.map((item, index) => (
@@ -106,7 +117,10 @@ const Stocks = ({ navigation }) => {
             >
               <View>
                 <Text style={{ fontSize: 19, padding: 10, paddingLeft: 15 }}>
-                  {item.name}
+                  ID : {item.id}
+                  {"\n"}
+                  {"\n"}
+                  Name : {item.name}
                 </Text>
               </View>
               <View style={{ flexDirection: "row" }}>
@@ -133,6 +147,21 @@ const Stocks = ({ navigation }) => {
           ))}
         </SafeAreaView>
       </ScrollView>
+      <Button
+        style={{
+          backgroundColor: "#6c09ed",
+          fontColor: "white",
+          width: 200,
+          borderRadius: 10,
+          marginLeft: 120,
+          marginTop: 20,
+        }}
+        mode="contained"
+        title="ADD Stocks"
+        onPress={() => navigation.push("AddStock")}
+      >
+        ADD Stocks
+      </Button>
     </View>
   );
 };

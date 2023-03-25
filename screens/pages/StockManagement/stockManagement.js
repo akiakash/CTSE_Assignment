@@ -62,13 +62,11 @@ const StockManagement = ({ navigation }) => {
   const [selected, setSelected] = React.useState("");
 
   const data = [
-    { key: "1", value: "Mobiles", disabled: true },
-    { key: "2", value: "Appliances" },
-    { key: "3", value: "Cameras" },
-    { key: "4", value: "Computers", disabled: true },
-    { key: "5", value: "Vegetables" },
-    { key: "6", value: "Diary Products" },
-    { key: "7", value: "Drinks" },
+    { key: "1", value: "Stocks", disabled: true },
+    { key: "2", value: "Glass" },
+    { key: "3", value: "Plastic" },
+    { key: "4", value: "Marbel" },
+    { key: "5", value: "Others" },
   ];
   return (
     <Card style={styles.container}>

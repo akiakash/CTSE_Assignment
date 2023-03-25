@@ -57,6 +57,13 @@ const SiteManagement = ({ navigation }) => {
   const [number, onChangeNumber] = React.useState([]);
   const [selected, setSelected] = React.useState("");
 
+  const data = [
+    { key: "1", value: "Sites Place", disabled: true },
+    { key: "2", value: "Place A" },
+    { key: "3", value: "Place B" },
+    { key: "4", value: "Place C" },
+  ];
+
   return (
     <Card style={styles.container}>
       <View style={{ margin: 10 }}>
@@ -93,7 +100,7 @@ const SiteManagement = ({ navigation }) => {
             }}
           />
           <Text> Site Place</Text>
-          <TextInput
+          {/* <TextInput
             style={styles.input}
             placeholder="useless placeholder"
             keyboardType="numeric"
@@ -104,6 +111,22 @@ const SiteManagement = ({ navigation }) => {
                 setPlace(null);
               } else {
                 setPlace(trimmedText);
+              }
+            }}
+          /> */}
+
+          <SelectList
+            setSelected={(val) => setSelected(val)}
+            data={data}
+            save="value"
+            onSelect={() => alert(selected)}
+            label="Categories"
+            onChangeText={({ data }) => {
+              const trimmedText = data.trim();
+              if (!trimmedText) {
+                setPlace(null);
+              } else {
+                setPlace(selected);
               }
             }}
           />

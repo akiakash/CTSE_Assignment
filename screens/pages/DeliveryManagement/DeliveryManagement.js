@@ -57,6 +57,13 @@ const DeliveryManagement = ({ navigation }) => {
   const [number, onChangeNumber] = React.useState([]);
   const [selected, setSelected] = React.useState("");
 
+  const data = [
+    { key: "1", value: "Delivery Type", disabled: true },
+    { key: "2", value: "Cash on delivery" },
+    { key: "3", value: "Pickup" },
+    { key: "4", value: "Door delivery" },
+  ];
+
   return (
     <Card style={styles.container}>
       <View style={{ margin: 10 }}>
@@ -93,7 +100,7 @@ const DeliveryManagement = ({ navigation }) => {
             }}
           />
           <Text> Delivery Type</Text>
-          <TextInput
+          {/* <TextInput
             style={styles.input}
             placeholder="useless placeholder"
             keyboardType="numeric"
@@ -104,6 +111,22 @@ const DeliveryManagement = ({ navigation }) => {
                 setType(null);
               } else {
                 setType(trimmedText);
+              }
+            }}
+          /> */}
+
+          <SelectList
+            setSelected={(val) => setSelected(val)}
+            data={data}
+            save="value"
+            onSelect={() => alert(selected)}
+            label="Categories"
+            onChangeText={({ data }) => {
+              const trimmedText = data.trim();
+              if (!trimmedText) {
+                setType(null);
+              } else {
+                setType(selected);
               }
             }}
           />

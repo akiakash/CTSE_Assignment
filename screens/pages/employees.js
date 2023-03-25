@@ -112,7 +112,10 @@ const Employees = ({ navigation }) => {
             >
               <View>
                 <Text style={{ fontSize: 19, padding: 10, paddingLeft: 15 }}>
-                  {item.name}
+                  ID : {item.id}
+                  {"\n"}
+                  {"\n"}
+                  Name : {item.name}
                 </Text>
               </View>
               <View style={{ flexDirection: "row" }}>
