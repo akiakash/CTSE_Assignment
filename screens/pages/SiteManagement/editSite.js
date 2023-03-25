@@ -84,7 +84,7 @@ const EditSite = ({ navigation }) => {
             setState({ ...state, empid: text });
           }}
         /> */}
-          <Text>Site Id</Text>
+          {/* <Text>Site Id</Text>
           <TextInput
             style={styles.input}
             placeholder="useless placeholder"
@@ -93,7 +93,7 @@ const EditSite = ({ navigation }) => {
             onChangeText={(text) => {
               setState({ ...state, sId: text });
             }}
-          />
+          /> */}
           <Text>Site Name</Text>
           <TextInput
             style={styles.input}
@@ -114,7 +114,7 @@ const EditSite = ({ navigation }) => {
               setState({ ...state, sPlace: text });
             }}
           />
-          <Text>Site Image</Text>
+          <Text>Site Description</Text>
           <TextInput
             style={styles.input}
             placeholder="useless placeholder"
